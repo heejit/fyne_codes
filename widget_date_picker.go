@@ -91,6 +91,7 @@ func (e *MyDateEntry) updateDisplay() {
 
 // handle key events
 func (e *MyDateEntry) TypedKey(key *fyne.KeyEvent) {
+
 	if key.Name == fyne.KeyDelete {
 		e.SetText("")
 		return
