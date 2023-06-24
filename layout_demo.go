@@ -7,7 +7,7 @@ import (
 )
 
 
-func CreateHBoxRatioutLayoutWidget() *fyne.Container {
+func CreateHBoxRatioLayoutWidget() *fyne.Container {
 	lbl1 := widget.NewLabel("Name:")
 	entry1 := widget.NewEntry()
 	lbl2 := widget.NewLabel("Number:")
