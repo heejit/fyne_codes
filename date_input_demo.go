@@ -8,19 +8,15 @@ import (
 	"fyne.io/fyne/v2/container"
 )
 
-func CreateDateInputWidget() *fyne.Container {
+func CreateDateInputWidget(app fyne.App, win fyne.Window) *fyne.Container {
 
-	dateEntry := NewMyDateEntry()
+	dateEntry := NewJDateInputWidget(app, win)
 	label := widget.NewLabel("Current Selection")
 	button := widget.NewButton("Show", func() { on_show_click(dateEntry, label) } )
 
 	helpText := `
-	1. Press UP/Down Arrow to change the part of date.
+	1. Press UP/Down/Left/Right Arrow to change the date.
 	2. Space to set current date.
-    3. Delete to clear
-    4. Press enter key to update the date
-	4. You can enter part of date (like Only day, day-month)
-    5. *Assuming first part is Day*
     `
 	helpTextWidget := widget.NewTextGridFromString(helpText)
 
@@ -28,12 +24,12 @@ func CreateDateInputWidget() *fyne.Container {
 
 }
 
-func on_show_click(d *MyDateEntry, l *widget.Label) {
+func on_show_click(d *JDateInputWidget, l *widget.Label) {
 	var msg string
-	if d.ToDate().IsZero() == true {
+	if d.GetDate().IsZero() == true {
 		msg = "No Input"
 	} else {
-		msg = fmt.Sprintf("Your input is : %s", d.ToDate().Format(time.DateOnly))
+		msg = fmt.Sprintf("Your input is : %s", d.GetDate().Format(time.DateOnly))
 	}
 	l.SetText(msg)
 }

@@ -12,7 +12,7 @@ func main() {
 	content := container.NewAppTabs()
 	content.SetTabLocation(container.TabLocationBottom)
 	content.Append(container.NewTabItem("HBoxRatioLayout", CreateHBoxRatioLayoutWidget()))
-	content.Append(container.NewTabItem("DateInputWidget", CreateDateInputWidget()))
+	content.Append(container.NewTabItem("DateInputWidget", CreateDateInputWidget(a, w)))
 
 	w.SetContent(content)
 	w.ShowAndRun()
