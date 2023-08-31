@@ -1,3 +1,3 @@
-1. Extended the Entry widget to take the Date Input.
+1. Date Input Widget Extended the Rich Text.
 2. HBoxRatioLayout layout widget by percentage of current width.
 
